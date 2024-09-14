@@ -11,6 +11,7 @@ const listService = async (Request, DataModel, searchArray) => {
       let searchQuery = { $or: searchArray };
       data = await DataModel.aggregate([
         { $match: searchQuery },
+        { $sort: { createdAt: -1 } },
         {
           $facet: {
             total: [{ $count: "count" }],
@@ -20,6 +21,7 @@ const listService = async (Request, DataModel, searchArray) => {
       ]);
     } else {
       data = await DataModel.aggregate([
+        { $sort: { createdAt: -1 } },
         {
           $facet: {
             total: [{ $count: "count" }],

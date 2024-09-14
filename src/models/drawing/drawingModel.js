@@ -77,7 +77,7 @@ const objectSchema = new mongoose.Schema(
 const drawingSchema = new mongoose.Schema(
   {
     title: { type: String, required: true },
-    objects: [objectSchema], // Array of objects (lines, shapes, text)
+    objects: { objects: [objectSchema] },
   },
   { versionKey: false, timestamps: true }
 );
