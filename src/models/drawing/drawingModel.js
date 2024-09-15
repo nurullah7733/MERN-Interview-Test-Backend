@@ -53,6 +53,7 @@ const objectSchema = new mongoose.Schema(
     fontFamily: { type: String },
     fontWeight: { type: String },
     fontSize: { type: Number },
+    styles: {},
     text: { type: String },
     underline: { type: Boolean },
     overline: { type: Boolean },
